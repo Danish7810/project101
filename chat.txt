@@ -1,0 +1,11 @@
+21:45:52	 From ps : https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+21:51:28	 From Computer Pathshala : curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+21:51:38	 From Computer Pathshala : a sudo mv /tmp/eksctl /usr/local/bin
+ b
+21:51:50	 From Computer Pathshala : eksctl version
+21:54:36	 From Computer Pathshala : Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
+21:55:10	 From Computer Pathshala : Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+21:57:20	 From Computer Pathshala : choco install -y eksctl
+21:57:31	 From Computer Pathshala : eksctl version
+21:59:39	 From Computer Pathshala : eksctl create cluster --name my-cluster --region region-code --fargate
+22:08:19	 From ps : ##########################################1- login in aws machinea- install aws cli  and then configure it with your access id and access keyb- install kubectl utility in linux machinecurl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectlc- check version of kubectl in linux machinekubectl version --client2-  install eksctl command in linux machinecurl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmpsudo mv /tmp/eksctl /usr/local/bineksctl version3- kubectl cluster using eksctl commandeksctl create cluster --name my-cluster --region region-code --fargate############################################
